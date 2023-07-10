@@ -4,6 +4,7 @@ var http = require("http");
 const cors = require("cors");
 
 var userRouter = require("./routes/user");
+var tradeRouter = require("./routes/trade");
 
 const port = process.env.PORT || 3000;
 const app = express();
@@ -13,6 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/", userRouter);
+app.use("/", tradeRouter);
 
 app.set("port", port);
 
